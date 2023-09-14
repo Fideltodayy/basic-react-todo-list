@@ -5,8 +5,8 @@ const TodoItems = ({ entries, deleteItem }) => {
     <ul>
       <b>Items:</b>
       {entries.map(({ id, text }) => (
-        <li key={id}>
-          <h1>{text}</h1>
+        <li key={id} className="todo-item">
+          <p>{text}</p>
           <button
             onClick={() => {
               deleteItem(id);

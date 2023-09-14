@@ -17,13 +17,16 @@ export default function App() {
   };
 
   return (
-    <div>
-      <div>
-        <AddForm addTask={addTask} />
+    <>
+      <div className="mainbody">
+        <div className="head">
+          <AddForm addTask={addTask} />
+        </div>
+        <div className="thorax">
+          <TodoItems entries={toDoList} deleteItem={deleteItem} />
+        </div>
       </div>
-      <div>
-        <TodoItems entries={toDoList} deleteItem={deleteItem} />
-      </div>
-    </div>
+      <footer className="abdomen">Made with love by Fideltodayy</footer>
+    </>
   );
 }
