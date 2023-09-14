@@ -19,7 +19,7 @@ body {
 /* Style the main container */
 .mainbody {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 20px;
   background-color: #5c5470;
   border-radius: 8px;
@@ -83,7 +83,8 @@ body {
 }
 
 /* Style the footer */
-.abdomen {
+.abdomen,
+a {
   text-align: center;
   margin-top: 20px;
   color: #777;

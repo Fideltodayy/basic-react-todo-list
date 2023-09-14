@@ -26,7 +26,12 @@ export default function App() {
           <TodoItems entries={toDoList} deleteItem={deleteItem} />
         </div>
       </div>
-      <footer className="abdomen">Made with love by Fideltodayy</footer>
+      <footer className="abdomen">
+        Made with love by{" "}
+        <a href="https://twitter.com/Fideltodayy" target="blank">
+          Fideltodayy
+        </a>
+      </footer>
     </>
   );
 }
