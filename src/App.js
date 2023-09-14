@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import TodoItems from "./components/TodoItems";
+import AddForm from "./components/AddForm";
+export default function App() {
+  const [toDoList, setToDoList] = useState([
+    { text: "Buy Sugar", id: 24846644 },
+    { text: "Eat Carrots", id: 34981614 },
+  ]);
 
-function App() {
+  function deleteItem(id) {
+    setToDoList((toDoList) => toDoList.filter((rec) => id !== rec.id));
+  }
+
+  const addTask = (userInput) => {
+    const newValue = { text: userInput, id: Date.now() };
+    setToDoList((toDoList) => [newValue, ...toDoList]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <AddForm addTask={addTask} />
+      </div>
+      <div>
+        <TodoItems entries={toDoList} deleteItem={deleteItem} />
+      </div>
     </div>
   );
 }
-
-export default App;
